@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CPImageSlider" customModule="ImageSlider" customModuleProvider="target">
+            <connections>
+                <outlet property="arrowButtonsView" destination="i0j-db-Bsu" id="dFk-HE-TzY"/>
+                <outlet property="myPageControl" destination="5gs-2k-E6j" id="SAJ-sm-v03"/>
+                <outlet property="myScrollView" destination="8O6-GW-uQp" id="R5X-Yg-3mI"/>
+                <outlet property="nextArrowButton" destination="hW2-B9-NvO" id="Tlj-LD-yfG"/>
+                <outlet property="prevArrowButton" destination="eWA-fs-rRX" id="0Gi-O5-SIm"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SFf-EB-asZ">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8O6-GW-uQp">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="VPQ-7X-fOX"/>
+                            </connections>
+                        </scrollView>
+                        <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="5gs-2k-E6j">
+                            <rect key="frame" x="168" y="610" width="39" height="37"/>
+                        </pageControl>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="5gs-2k-E6j" firstAttribute="centerX" secondItem="SFf-EB-asZ" secondAttribute="centerX" id="37a-9u-FiV"/>
+                        <constraint firstAttribute="bottom" secondItem="5gs-2k-E6j" secondAttribute="bottom" constant="20" id="KXH-Gj-y87"/>
+                        <constraint firstItem="8O6-GW-uQp" firstAttribute="leading" secondItem="SFf-EB-asZ" secondAttribute="leading" id="mFO-iT-z8L"/>
+                        <constraint firstItem="8O6-GW-uQp" firstAttribute="top" secondItem="SFf-EB-asZ" secondAttribute="top" id="rfV-HB-vjN"/>
+                        <constraint firstAttribute="bottom" secondItem="8O6-GW-uQp" secondAttribute="bottom" id="xnV-NY-csK"/>
+                        <constraint firstAttribute="trailing" secondItem="8O6-GW-uQp" secondAttribute="trailing" id="zNN-xE-dO1"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i0j-db-Bsu">
+                    <rect key="frame" x="0.0" y="308" width="375" height="50"/>
+                    <subviews>
+                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eWA-fs-rRX">
+                            <rect key="frame" x="20" y="10" width="30" height="30"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="IWU-qZ-sNm"/>
+                                <constraint firstAttribute="width" constant="30" id="eJi-FP-s0K"/>
+                            </constraints>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" title="Button" image="cp_prev_arrow.png"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="15"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="previousButtonPressed" destination="-1" eventType="touchUpInside" id="i29-9H-eFQ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hW2-B9-NvO">
+                            <rect key="frame" x="325" y="10" width="30" height="30"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="4uR-Ll-xl9"/>
+                                <constraint firstAttribute="width" constant="30" id="wUR-0M-ogC"/>
+                            </constraints>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" title="Button" image="cp_next_arrow.png"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="15"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="nextButtonPressed" destination="-1" eventType="touchUpInside" id="aB0-zR-nA6"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="AVw-9p-gg4"/>
+                        <constraint firstItem="eWA-fs-rRX" firstAttribute="centerY" secondItem="i0j-db-Bsu" secondAttribute="centerY" id="GcS-BE-8Tb"/>
+                        <constraint firstItem="hW2-B9-NvO" firstAttribute="centerY" secondItem="i0j-db-Bsu" secondAttribute="centerY" id="Gqg-We-5ix"/>
+                        <constraint firstItem="eWA-fs-rRX" firstAttribute="leading" secondItem="i0j-db-Bsu" secondAttribute="leading" constant="20" id="Uup-YY-azS"/>
+                        <constraint firstAttribute="trailing" secondItem="hW2-B9-NvO" secondAttribute="trailing" constant="20" id="gxt-kp-ucO"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="SFf-EB-asZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="6hs-dB-shR"/>
+                <constraint firstItem="i0j-db-Bsu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="KZF-iE-R1x"/>
+                <constraint firstAttribute="trailing" secondItem="i0j-db-Bsu" secondAttribute="trailing" id="VtU-If-3jN"/>
+                <constraint firstItem="i0j-db-Bsu" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="WEd-H9-Bw7"/>
+                <constraint firstAttribute="bottom" secondItem="SFf-EB-asZ" secondAttribute="bottom" id="Z1d-pd-d7s"/>
+                <constraint firstItem="SFf-EB-asZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Zbd-36-ViI"/>
+                <constraint firstAttribute="trailing" secondItem="SFf-EB-asZ" secondAttribute="trailing" id="Zeh-E6-n6d"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="cp_next_arrow.png" width="128" height="128"/>
+        <image name="cp_prev_arrow.png" width="128" height="128"/>
+    </resources>
+</document>
